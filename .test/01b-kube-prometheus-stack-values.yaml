@@ -1,0 +1,17 @@
+prometheus:
+  prometheusSpec:
+    # Watch ServiceMonitors in all namespaces (including konflux-otel)
+    serviceMonitorNamespaceSelector: {}
+    # Pick up all ServiceMonitors regardless of labels
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelector: {}
+
+# Disable components we don't need for this test
+grafana:
+  enabled: false
+alertmanager:
+  enabled: false
+nodeExporter:
+  enabled: false
+kubeStateMetrics:
+  enabled: false

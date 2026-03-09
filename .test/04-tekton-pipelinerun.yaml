@@ -1,0 +1,8 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  generateName: kanary-otel-poc-run-
+  namespace: appstudio-kanary
+spec:
+  pipelineRef:
+    name: kanary-otel-poc
