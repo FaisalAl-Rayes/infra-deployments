@@ -77,6 +77,16 @@ spec:
               key: prometheus_token
         - name: INTEGRATION_TEST_SCENARIO
           value: $(params.integration-test-scenario)
+        - name: GITHUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: kanary-probe-credentials
+              key: github_token
+        - name: GITLAB_BOT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: kanary-probe-credentials
+              key: gitlab-cee-pipelines-as-code-secret
       script: |
         #!/usr/bin/env bash
         set -euo pipefail
